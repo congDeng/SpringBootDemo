@@ -12,8 +12,9 @@ public class SpringBootDemoApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringBootDemoApplication.class, args);
 		Alien alien = applicationContext.getBean(Alien.class);
-		alien.complie();
+		alien.code();
 	}
+
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
 		return String.format("Hello %s!", name);
